@@ -2,7 +2,7 @@ version: '2'
 services:
   nginx:
     build:
-      context: ./nginx
+      context: ./docker/nginx
     image: reactjs_nginx
     container_name: reactjs_nginx_container
     ports:
@@ -11,7 +11,7 @@ services:
       - ./app/dist:/wwwroot:ro
   webpack:
     build:
-      context: ./webpack
+      context: ./docker/webpack
     image: reactjs_webpack
     container_name: reactjs_webpack_container
     volumes:
