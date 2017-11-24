@@ -11,5 +11,3 @@ RUN npm install --save-dev babel-loader babel-core babel-preset-es2015 babel-pre
 RUN npm install --save-dev style-loader css-loader sass-loader node-sass
 
 CMD ["webpack", "-d", "--watch"]
-
-
