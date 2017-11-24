@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Menu } from './menu';
 import { Tasks } from './tasks';
 import { Projects } from './projects';
+import './styles/main.scss'
 
 class App extends React.Component {
   constructor(props) {

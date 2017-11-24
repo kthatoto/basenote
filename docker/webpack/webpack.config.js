@@ -2,10 +2,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: {
-    bundle: './src/app.js',
-    css: './src/styles/main.scss',
-  },
+  entry: './src/app.js',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -23,7 +20,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loaders: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
       }
     ]
   }
