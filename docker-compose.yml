@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/nginx
     ports:
-      - "3000:8080"
+      - "8080:8080"
     volumes:
       - ./app/dist:/wwwroot:ro
   node:
@@ -23,7 +23,7 @@ services:
     environment:
       RAILS_ENV: development
     ports:
-      - "3001:3000"
+      - "3000:3000"
     extends:
       file: ./docker/mysql/password.yml
       service: password
