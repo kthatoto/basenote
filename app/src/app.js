@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import axiox from 'axios';
+import axios from 'axios';
 
 import './styles/main.scss';
 
@@ -11,6 +11,13 @@ class App extends React.Component {
     this.state = {
       value: 0,
     };
+  }
+  componentDidMount() {
+    axios.get('http://0.0.0.0:3000/check').then((response) => {
+      console.log(response);
+    }).catch((response) => {
+      console.log(response);
+    })
   }
   render() {
     return (
