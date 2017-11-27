@@ -9,9 +9,4 @@ body {
   font: 14px "Century Gothic", Futura, sans-serif;
 }
 
-@import './menu.scss';
-
-#content {
-  margin-left: 300px;
-  width: calc(100% - 300px);
-}
+@import './sub.scss';
