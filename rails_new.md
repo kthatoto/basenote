@@ -1,6 +1,6 @@
 
 ./rails_new の後
 
-$ docker-compose up
+docker-compose up
 <ctrl-C>
-$ docker-compose run --rm web rake db:create
+docker-compose run --rm rails rake db:create
