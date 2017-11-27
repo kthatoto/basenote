@@ -6,11 +6,11 @@ RUN apt-get update -qq && apt-get install -y build-essential mysql-client nodejs
 RUN gem install bundler
 
 WORKDIR /tmp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
+ADD ./docker/rails/Gemfile Gemfile
+ADD ./docker/rails/Gemfile.lock Gemfile.lock
 RUN bundle install
 
-ENV APP_HOME /test_management_tool
+ENV APP_HOME /rails
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD . $APP_HOME
