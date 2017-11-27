@@ -10,7 +10,7 @@ ADD ./docker/rails/Gemfile Gemfile
 ADD ./docker/rails/Gemfile.lock Gemfile.lock
 RUN bundle install
 
-ENV APP_HOME /rails
+ENV APP_HOME /rails_app
 RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 ADD . $APP_HOME
