@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  get 'checkj', to: 'top#check'
+  get 'check', to: 'top#check'
 end
