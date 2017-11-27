@@ -13,3 +13,28 @@ services:
     volumes:
       - ./app/src:/app/src:ro
       - ./app/dist:/app/dist:z
+  rails:
+    build:
+      context: ./docker/rails
+      # dockerfile: ./docker/rails/Dockerfile
+    command: bundle exec rails s -p 3001 -b '0.0.0.0'
+    # ports:
+    #  - "3000:3000"
+    volumes:
+      - ./rails_app:/test_management_tool
+    environment:
+      RAILS_ENV: development
+    extends:
+      file: ./docker/mysql/password.yml
+      service: password
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7.17
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql/volumes:/var/lib/mysql
+    extends:
+      file: ./docker/mysql/password.yml
+      service: password
