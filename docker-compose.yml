@@ -22,6 +22,8 @@ services:
       - ./rails:/rails_app
     environment:
       RAILS_ENV: development
+    ports:
+      - "3001:3000"
     extends:
       file: ./docker/mysql/password.yml
       service: password
