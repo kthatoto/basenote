@@ -13,7 +13,7 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
-    axios.get('http://0.0.0.0:3001/check').then((response) => {
+    axios.get('http://0.0.0.0:3000/check').then((response) => {
       console.log(response);
     }).catch((response) => {
       console.log(response);
