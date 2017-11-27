@@ -1,0 +1,13 @@
+#!/bin/sh
+docker-compose run --rm web rails new . --force \
+  --database=mysql \
+  --skip-bundle \
+  --skip-coffee \
+  --skip-turbolinks \
+  --webpack=react \
+  -T
+cp Gemfile ./code/Gemfile
+docker-compose build
+grep -l 'password:' ./code/config/database.yml | xargs sed -i.bak -e 's/password:$/password: <%= ENV["MYSQL_ROOT_PASSWORD"] %>/g'
+grep -l 'host: localhost' ./code/config/database.yml | xargs sed -i.bak -e 's/localhost/db/g'
+docker system prune -f
