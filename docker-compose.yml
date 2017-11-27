@@ -3,17 +3,13 @@ services:
   nginx:
     build:
       context: ./docker/nginx
-    image: reactjs_nginx
-    container_name: reactjs_nginx_container
     ports:
       - "3000:8080"
     volumes:
       - ./app/dist:/wwwroot:ro
-  webpack:
+  node:
     build:
-      context: ./docker/webpack
-    image: reactjs_webpack
-    container_name: reactjs_webpack_container
+      context: ./docker/node
     volumes:
       - ./app/src:/app/src:ro
       - ./app/dist:/app/dist:z
