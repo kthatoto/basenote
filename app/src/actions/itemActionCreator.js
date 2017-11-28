@@ -13,3 +13,8 @@ export function submitItem(itemName) {
   };
 }
 
+export function deleteItem(itemName) {
+  return {
+    type: "DELETE_ITEM",
+  }
+}
