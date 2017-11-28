@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import Form from './Form';
+import ItemList from './ItemList';
 
 class App extends Component {
   componentDidMount() {
@@ -16,8 +17,7 @@ class App extends Component {
     return (
       <div>
         <Form />
-        <div className="list">
-        </div>
+        <ItemList />
       </div>
     );
   }

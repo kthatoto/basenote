@@ -5,8 +5,6 @@ import { submitItem } from '../actions/itemActionCreator';
 
 class Form extends Component {
   render() {
-    // mapStateToProps で紐付けしていることに注意
-    //const { flag, text, number } = this.props;
     return (
       <div>
         <input type="text" className="form__input" ref="inputText" />
@@ -16,7 +14,7 @@ class Form extends Component {
   }
 
   submitItem() {
-    const itemName = this.refs.inputText.getDOMNode().value;
+    const itemName = this.refs.inputText.value;
     this.props.submitItem(itemName);
   }
 }
