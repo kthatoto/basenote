@@ -1,7 +1,7 @@
-import React, { Component } from "react"
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { submitItem } from "../actions/items"
+import { submitItem } from '../actions/itemActionCreator';
 
 class Form extends Component {
   render() {
@@ -10,27 +10,25 @@ class Form extends Component {
     return (
       <div>
         <input type="text" className="form__input" ref="inputText" />
-        <input type="submit" className="form__submit" value="submit" />
+        <button onClick={() => this.submitItem()} className="form__submit">submit</button>
       </div>
-    )
+    );
   }
 
-  submitButtonClicked(e) {
+  submitItem() {
     const itemName = this.refs.inputText.getDOMNode().value;
-    dispatch(submitItem(itemName));
+    this.props.submitItem(itemName);
   }
 }
+function mapStateToProps(state) {
+  return state;
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    submitItem: itemName => {
+      dispatch(submitItem(itemName))
+    },
+  };
+}
 
-// function mapStateToProps(state) {
-//   const { flag, text, number } = state;
-//   return {
-//     flag,
-//     text,
-//     number
-//   }
-// }
-
-// react-redux にある connect 関数を使うと state と Text の this.props をひも付けできる
-// 前述したとおり、 store.subscribe() を呼ばなくても良くなる
-// export default connect(mapStateToProps)(Text)
-
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import axios from 'axios';
 
-import Form from './components/Form';
-
-import './styles/main.scss';
+import Form from './Form';
 
 class App extends React.Component {
   componentDidMount() {
@@ -25,8 +22,8 @@ class App extends React.Component {
     );
   }
 }
+function mapStateToProps(state) {
+  return state;
+}
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('app')
-);
+export default connect(mapStateToProps)(App);
