@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 import Form from './Form';
 
-class App extends React.Component {
+class App extends Component {
   componentDidMount() {
     axios.get('http://0.0.0.0:3000/check').then((response) => {
       console.log(response);
