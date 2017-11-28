@@ -14,6 +14,12 @@ export default function item(state = initialState, action) {
           ...state.items
         ],
       });
+    case 'DELETE_ITEM':
+      const fileteredItems = state.items.filter((item, i) => i != action.index);
+      return Object.assign({}, state, {
+        items: fileteredItems,
+      });
+
     default:
       return state;
   }

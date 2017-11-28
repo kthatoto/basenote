@@ -15,10 +15,10 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <main>
         <Form />
         <ItemList />
-      </div>
+      </main>
     );
   }
 }

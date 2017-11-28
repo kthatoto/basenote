@@ -6,7 +6,7 @@ import { submitItem } from '../actions/itemActionCreator';
 class Form extends Component {
   render() {
     return (
-      <div>
+      <div className="form">
         <input type="text" className="form__input" ref="inputText" />
         <button onClick={() => this.submitItem()} className="form__submit">submit</button>
       </div>

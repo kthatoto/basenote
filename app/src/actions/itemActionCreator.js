@@ -9,12 +9,13 @@ export function submitItem(itemName) {
   // });
   return {
     type: "SUBMIT_ITEM",
-    itemName: itemName,
+    itemName,
   };
 }
 
-export function deleteItem(itemName) {
+export function deleteItem(index) {
   return {
     type: "DELETE_ITEM",
+    index,
   }
 }

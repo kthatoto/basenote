@@ -1,0 +1,26 @@
+
+.items {
+  &__item {
+    position: relative;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    &:hover {
+      .items__delete {
+        display: inline-block;
+      }
+    }
+  }
+  &__delete {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    cursor: pointer;
+    display: none;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    border-radius: 50%;
+    background-color: #c7254e;
+  }
+}
