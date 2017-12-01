@@ -1,9 +1,8 @@
 
-
 const initialState = {
   items: [],
 };
-export default function item(state = initialState, action) {
+export default function items(state = initialState, action) {
   switch (action.type) {
     case 'SUBMIT_ITEM':
       return Object.assign({}, state, {

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import Form from './Form';
-import ItemList from './ItemList';
+import Menu from './Menu';
+import MainDisplay from './MainDisplay';
+import Console from './Console';
 
 class App extends Component {
   componentDidMount() {
@@ -15,10 +16,11 @@ class App extends Component {
   }
   render() {
     return (
-      <main>
-        <Form />
-        <ItemList />
-      </main>
+      <div>
+        <Menu />
+        <MainDisplay />
+        <Console />
+      </div>
     );
   }
 }
