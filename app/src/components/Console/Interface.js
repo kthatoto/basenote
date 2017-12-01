@@ -4,9 +4,18 @@ import { connect } from 'react-redux';
 
 class Interface extends Component {
   componentDidMount() {
-
+    this.refs.line.focus();
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 27 || (e.ctrlKey && e.keyCode == 219)) {
+        this.refs.line.focus()
+      }
+    });
   }
-  command() {
+  command(e) {
+    if (e.keyCode == 13) {
+      let line = this.refs.line;
+      line.value = '';
+    }
   }
   render() {
     return (
@@ -14,7 +23,8 @@ class Interface extends Component {
         <div className="interface__prompt">$</div>
         <input type="text"
           className="interface__input"
-          onKeyDown={this.command}
+          ref="line"
+          onKeyDown={(e) => this.command(e)}
         />
       </div>
     );
