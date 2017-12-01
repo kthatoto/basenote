@@ -6,10 +6,30 @@
   box-sizing: border-box;
 }
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-}
-main {
-  margin: 30px;
+//  font: 14px "Century Gothic", Futura, sans-serif;
 }
 
-//@import './items.scss';
+.app {
+  > * {
+    height: 100vh;
+  }
+}
+$menuWidth: 250px;
+$consoleWidth: 450px;
+.mainDisplay {
+  position: absolute;
+  margin: 0 $consoleWidth 0 $menuWidth;
+  width: calc(100% - #{$menuWidth} - #{$consoleWidth});
+  background-color: yellow;
+}
+.menu {
+  float: left;
+  width: $menuWidth;
+  background-color: red;
+}
+.console {
+  float: right;
+  width: $consoleWidth;
+  background-color: blue;
+}
+

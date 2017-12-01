@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 class MainDisplay extends Component {
   render() {
     return (
-      <div>
+      <div className="mainDisplay">
       </div>
     );
   }

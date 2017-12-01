@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import axios from 'axios';
 
+import Calendar from './Console/Calendar';
+import Interface from './Console/Interface';
+
 class Console extends Component {
   render() {
     return (
-      <div>
+      <div className="console">
+        <Calendar />
+        <Interface />
       </div>
     );
   }

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import Menu from './Menu';
 import MainDisplay from './MainDisplay';
+import Menu from './Menu';
 import Console from './Console';
 
 class App extends Component {
@@ -16,9 +16,9 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <Menu />
+      <div className="app">
         <MainDisplay />
+        <Menu />
         <Console />
       </div>
     );

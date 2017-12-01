@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import axios from 'axios';
 
-class Menu extends Component {
+class Interface extends Component {
   render() {
     return (
-      <div className="menu">
+      <div>
       </div>
     );
   }
@@ -14,4 +14,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(Menu);
+export default connect(mapStateToProps)(Interface);
