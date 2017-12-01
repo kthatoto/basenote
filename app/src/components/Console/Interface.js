@@ -3,9 +3,19 @@ import { connect } from 'react-redux';
 //import axios from 'axios';
 
 class Interface extends Component {
+  componentDidMount() {
+
+  }
+  command() {
+  }
   render() {
     return (
-      <div>
+      <div className="interface">
+        <div className="interface__prompt">$</div>
+        <input type="text"
+          className="interface__input"
+          onKeyDown={this.command}
+        />
       </div>
     );
   }

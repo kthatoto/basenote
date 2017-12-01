@@ -31,5 +31,9 @@ $consoleWidth: 450px;
   float: right;
   width: $consoleWidth;
   background-color: blue;
+  position: relative;
 }
 
+@import './console/console';
+@import './console/calendar';
+@import './console/interface';

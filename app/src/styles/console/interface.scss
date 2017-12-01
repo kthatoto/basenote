@@ -1,0 +1,35 @@
+
+.interface {
+
+  $interfaceHeight: 100px;
+  $promptWidth: 50px;
+  $font-size: 32px;
+
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  font-size: $font-size;
+
+  height: $interfaceHeight;
+  &__prompt {
+    width: $promptWidth;
+    height: $interfaceHeight;
+    line-height: $interfaceHeight;
+    float: left;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+  }
+  &__input {
+    border: none;
+    float: right;
+    background: transparent;
+    outline: 0;
+    color: white;
+    font-size: $font-size;
+    width: calc(100% - #{$promptWidth});
+    height: $interfaceHeight;
+  }
+}
