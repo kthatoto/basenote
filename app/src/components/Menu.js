@@ -7,6 +7,9 @@ class Menu extends Component {
   render() {
     return (
       <div className="menu">
+        <MenuItem title="Dailies" />
+        <MenuItem title="Projects" />
+        <MenuItem title="Tasks" />
       </div>
     );
   }

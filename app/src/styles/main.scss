@@ -4,10 +4,15 @@
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+  //font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+  font-family: Courier, Monaco, monospace;
 }
 body {
-//  font: 14px "Century Gothic", Futura, sans-serif;
 }
+
+$black: #2f2f3e;
+$white: #f0f0f0;
+$blue: #7EC7D8;
 
 .app {
   > * {
@@ -20,19 +25,22 @@ $consoleWidth: 450px;
   position: absolute;
   margin: 0 $consoleWidth 0 $menuWidth;
   width: calc(100% - #{$menuWidth} - #{$consoleWidth});
-  background-color: yellow;
+  background-color: $white;
 }
 .menu {
   float: left;
   width: $menuWidth;
-  background-color: red;
+  background-color: $black;
 }
 .console {
   float: right;
   width: $consoleWidth;
-  background-color: blue;
+  background-color: $black;
   position: relative;
 }
+
+@import './menu/menu';
+@import './menu/menuItem';
 
 @import './console/console';
 @import './console/calendar';

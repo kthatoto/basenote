@@ -3,12 +3,12 @@
 
   $interfaceHeight: 100px;
   $promptWidth: 50px;
-  $font-size: 32px;
+  $font-size: 28px;
 
   bottom: 0;
   position: absolute;
   width: 100%;
-  color: white;
+  color: $white;
   font-size: $font-size;
 
   height: $interfaceHeight;
@@ -26,7 +26,7 @@
     float: right;
     background: transparent;
     outline: 0;
-    color: white;
+    color: $white;
     font-size: $font-size;
     width: calc(100% - #{$promptWidth});
     height: $interfaceHeight;

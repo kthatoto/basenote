@@ -19,3 +19,6 @@ $ docker-compose run --rm rails rake db:create
 ## Node moduleを追加したい時
 - ./docker/node/Dockerにモジュール追加
 - `$ dcoker-compose build`
+
+## TODO
+- 日本語等フォント
