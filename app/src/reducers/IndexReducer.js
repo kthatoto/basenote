@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import Commands from './Commands';
+import Directories from './Directories';
 
 const reducer = combineReducers({
-  Commands,
+  Directories,
 });
 
 export default reducer;

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import axios from 'axios';
-import MenuItem from './Menu/MenuItem';
 
-class Menu extends Component {
+class MenuItem extends Component {
   render() {
     return (
-      <div className="menu">
+      <div className="menuItem">
       </div>
     );
   }
@@ -15,4 +14,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(Menu);
+export default connect(mapStateToProps)(MenuItem);
