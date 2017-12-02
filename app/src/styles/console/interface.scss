@@ -31,5 +31,10 @@
     font-size: $font-size;
     width: calc(100% - #{$promptWidth});
     height: $interfaceHeight;
+    &.-sub {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
   }
 }

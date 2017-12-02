@@ -14,8 +14,13 @@ class Interface extends Component {
   command(e) {
     if (e.keyCode == 13) {
       let line = this.refs.line;
+      const command = line.value;
       line.value = '';
     }
+  }
+  complement(e) {
+    alert(123);
+    this.refs.line.focus();
   }
   render() {
     return (
@@ -26,6 +31,9 @@ class Interface extends Component {
           ref="line"
           onKeyDown={(e) => this.command(e)}
         />
+        <input type="text"
+          className="interface__input -sub"
+          onFocus={(e) => this.complement(e)} />
       </div>
     );
   }
