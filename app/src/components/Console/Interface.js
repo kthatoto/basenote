@@ -18,7 +18,7 @@ class Interface extends Component {
       const line = this.refs.line;
       const command = line.value;
       line.value = '';
-      RootBin.processCommand(command);
+      RootBin.processCommand(command, this.props.dispatch);
     }
   }
   complement(e) {
@@ -57,6 +57,11 @@ class Interface extends Component {
 }
 function mapStateToProps(state) {
   return state;
+}
+function mapDispatchToProps(dispath) {
+  return {
+    dispatch
+  };
 }
 
 export default connect(mapStateToProps)(Interface);

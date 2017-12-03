@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 //import axios from 'axios';
 
 import Calendar from './Console/Calendar';
-import ResultScreen from './Console/ResultScreen';
+import OutputScreen from './Console/OutputScreen';
 import Interface from './Console/Interface';
 
 class Console extends Component {
@@ -12,7 +12,7 @@ class Console extends Component {
       <div className="console">
         <Calendar />
         <div className="terminal">
-          <ResultScreen />
+          <OutputScreen />
           <Interface />
         </div>
       </div>
