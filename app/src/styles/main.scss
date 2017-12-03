@@ -13,6 +13,7 @@ body {
 $black: #2f2f3e;
 $white: #f0f0f0;
 $blue: #7EC7D8;
+$marine: #a3fdc5;
 
 .app {
   > * {
@@ -43,6 +44,3 @@ $consoleWidth: 450px;
 @import './menu/menuItem';
 
 @import './console/console';
-@import './console/calendar';
-@import './console/terminal';
-@import './console/interface';

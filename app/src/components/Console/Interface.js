@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import axios from 'axios';
 
+import RootBin from '../../bin/RootBin';
+
 class Interface extends Component {
   componentDidMount() {
     this.refs.line.focus();
@@ -16,6 +18,7 @@ class Interface extends Component {
       const line = this.refs.line;
       const command = line.value;
       line.value = '';
+      RootBin.processCommand(command);
     }
   }
   complement(e) {

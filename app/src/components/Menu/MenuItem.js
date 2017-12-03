@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 
 class MenuItem extends Component {
   render() {
+    const className = "menuItem" + (this.props.title == 'Dailies' ? ' -selected' : '');
     return (
-      <div className="menuItem">
+      <div className={className}>
         {this.props.title}
       </div>
     );
