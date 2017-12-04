@@ -65,9 +65,7 @@ function mapStateToProps(state) {
   return state;
 }
 function mapDispatchToProps(dispath) {
-  return {
-    dispatch
-  };
+  return { dispatch };
 }
 
 export default connect(mapStateToProps)(Interface);
