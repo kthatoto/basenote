@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import axios from 'axios';
+
 import Utils from '../../Utils/Utils';
 
 import RootBin from '../../bin/RootBin';
