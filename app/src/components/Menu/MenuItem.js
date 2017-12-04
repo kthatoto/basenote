@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 
 class MenuItem extends Component {
   render() {
-    const className = "menuItem" + (this.props.title == 'Dailies' ? ' -selected' : '');
+    const className =
+      "menuItem" +
+      (this.props.Terminal.currentDirectory.split('/')[1] == this.props.label ? ' -selected' : '');
     return (
       <div className={className}>
-        {this.props.title}
+        {this.props.label}
       </div>
     );
   }
