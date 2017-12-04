@@ -1,0 +1,15 @@
+
+.dailyItem {
+  padding: 15px;
+  margin: 10px;
+  background-color: $blue;
+  color: $white;
+  border: 1px solid $black;
+  border-radius: 4px;
+  &.-focused {
+    border: 2px solid $blue;
+    background-color: $lightblue;
+    color: $blue;
+    font-weight: bolder;
+  }
+}

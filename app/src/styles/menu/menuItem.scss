@@ -1,11 +1,11 @@
 
 .menuItem {
-  color: $blue;
+  color: $lightblue;
   padding: 10px 0 10px 20px;
   font-size: 32px;
   font-weight: bolder;
   &.-selected {
-    background-color: $blue;
+    background-color: $lightblue;
     color: $black;
   }
 }

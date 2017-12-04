@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 
 class DailyItem extends Component {
   render() {
+    const daily = this.props.daily;
+    const className = "dailyItem" + (daily.focused ? ' -focused' : '');
     return (
-      <div className="dailyItem">
+      <div className={className}>
+        {daily.year}/
+        {daily.month}/
+        {daily.date}
       </div>
     );
   }
