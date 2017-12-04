@@ -3,4 +3,12 @@
   $outputScreenHeight: 100px;
   height: $outputScreenHeight;
   width: 100%;
+  padding: 10px 10px 0;
+  position: relative;
+  &__currentDirectory {
+    position: absolute;
+    bottom: -20px;
+    color: #ac95b7;
+    font-weight: bolder;
+  }
 }

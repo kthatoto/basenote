@@ -1,14 +1,21 @@
 
+import echo from './echo';
+import cd from './cd';
+import pwd from './pwd';
+
 export default class RootBin {
-  static processCommand(rawCommand, dispatch) {
+  static processCommand(rawCommand, state, dispatch) {
     const command = rawCommand.split(" ").filter(value => value);
 
     switch(command[0]) {
       case 'echo':
-        dispatch({
-          type: 'OUTPUT_MESSAGE',
-          message: command.slice(1, command.length).join(" "),
-        });
+        echo(command, dispatch);
+        return;
+      case 'cd':
+        cd(command, state, dispatch);
+        return;
+      case 'pwd':
+        pwd(command, state, dispatch);
         return;
       default:
         dispatch({

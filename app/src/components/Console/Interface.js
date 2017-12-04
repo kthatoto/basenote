@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 //import axios from 'axios';
+import Utils from '../../Utils/Utils';
 
 import RootBin from '../../bin/RootBin';
 
@@ -18,7 +19,7 @@ class Interface extends Component {
       const line = this.refs.line;
       const command = line.value;
       line.value = '';
-      RootBin.processCommand(command, this.props.dispatch);
+      RootBin.processCommand(command, this.props, this.props.dispatch);
     }
   }
   complement(e) {
@@ -26,12 +27,17 @@ class Interface extends Component {
     line.focus();
     const command = line.value.split(" ").filter(value => value);
 
-    const elms = ["projects", "protests", "products", "calendar"];
+    const currentResources = Utils.currentResources(
+      this.props.Terminal.resources,
+      this.props.Terminal.currentDirectory
+    ).map(resource => resource.name);
 
     // 最初のコマンドではなく引数が補完対象になった時
     if (command.length > 1) {
       const lastArgument = command[command.length - 1];
-      const filteredOptions = elms.filter(value => value.startsWith(lastArgument));
+      const filteredOptions = currentResources.filter(value =>
+        value.toLowerCase().startsWith(lastArgument.toLowerCase())
+      );
       if (filteredOptions.length > 1) {
         //一部補完
       } else if (filteredOptions.length == 1) {
