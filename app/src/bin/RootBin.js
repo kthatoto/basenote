@@ -2,6 +2,7 @@
 import echo from './echo';
 import cd from './cd';
 import pwd from './pwd';
+import mkdir from './mkdir';
 
 export default class RootBin {
   static processCommand(rawCommand, state, dispatch) {
@@ -16,6 +17,9 @@ export default class RootBin {
         return;
       case 'pwd':
         pwd(command, state, dispatch);
+        return;
+      case 'mkdir':
+        mkdir(command, state, dispatch);
         return;
       default:
         dispatch({
