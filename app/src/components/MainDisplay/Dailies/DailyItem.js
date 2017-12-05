@@ -7,8 +7,8 @@ class DailyItem extends Component {
     const className = "dailyItem" + (daily.focused ? ' -focused' : '');
     return (
       <div className={className}>
-        {daily.year}/
-        {daily.month}/
+        {daily.year}-
+        {daily.month}-
         {daily.date}
       </div>
     );

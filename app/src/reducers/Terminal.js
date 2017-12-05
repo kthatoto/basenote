@@ -35,6 +35,10 @@ export default function terminal(state = initialState, action) {
         currentDirectory: currentDirectory + '/' + action.directory,
         output: '',
       });
+    case 'BACK_ROOT_DIRECTORY':
+      return Object.assign({}, state, {
+        currentDirectory: '/',
+      });
     case 'BACK_DIRECTORY':
       if (state.currentDirectory === '/') {
         return Object.assign({}, state, {

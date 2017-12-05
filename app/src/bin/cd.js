@@ -15,6 +15,10 @@ export default function cd(command, state, dispatch) {
     dispatch({
       type: 'BACK_DIRECTORY',
     });
+  } else if (command.length == 1) {
+    dispatch({
+      type: 'BACK_ROOT_DIRECTORY',
+    })
   } else {
     dispatch({
       type: 'OUTPUT_MESSAGE',
