@@ -14,7 +14,7 @@ class Dailies extends Component {
       );
     } else {
       return (
-        <Daily />
+        <Daily date={this.props.Terminal.currentDirectory.split('/')[2]} />
       );
     }
   }

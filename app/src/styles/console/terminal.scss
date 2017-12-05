@@ -1,7 +1,7 @@
 
 .terminal {
   $terminalHeight: 200px;
-  background-color: #444;
+  background-color: $terminal;
   position: absolute;
   bottom: 0;
   height: $terminalHeight;

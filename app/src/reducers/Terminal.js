@@ -2,6 +2,7 @@
 const initialState = {
   output: '',
   currentDirectory: '/',
+  //currentDirectory: '/Dailies/2017-12-5',
   resources: [
     {
       name: "Dailies",

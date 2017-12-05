@@ -13,7 +13,10 @@ $black: #2f2f3e;
 $white: #eee;
 $blue: #28457a;
 $lightblue: #7EC7D8;
-$marine: #a3fdc5;
+$bgBlack: #333;
+$terminal: #444;
+$gray: #777;
+
 
 $innerBorderColor: #aaa;
 
@@ -28,7 +31,7 @@ $consoleWidth: 450px;
   position: absolute;
   margin: 0 $consoleWidth 0 $menuWidth;
   width: calc(100% - #{$menuWidth} - #{$consoleWidth});
-  background-color: $white;
+  background-color: $bgBlack;
 }
 .menu {
   float: left;

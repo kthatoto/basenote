@@ -1,0 +1,31 @@
+
+.line {
+  $lineHeight: 18px;
+  $charWidth: 10px;
+  height: $lineHeight;
+  line-height: $lineHeight;
+  color: $white;
+  &__number {
+    width: 30px;
+    padding: 0 3px;
+    margin-right: 5px;
+    float: left;
+    font-size: 13px;
+    text-align: right;
+    color: $gray;
+  }
+  &__content {
+    float: left;
+    height: $lineHeight;
+  }
+  &__column {
+    display: inline-block;
+    width: $charWidth;
+    height: $lineHeight;
+    vertical-align: top;
+    &.-cursor {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}
