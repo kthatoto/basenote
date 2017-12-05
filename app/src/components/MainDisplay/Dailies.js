@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchDailies, shiftFocus } from '../../actions/dailiesActionCreator';
-import { changeDirectory } from '../../actions/directoriesActionCreator';
 import DailyList from './Dailies/DailyList';
 import Daily from './Dailies/Daily';
 

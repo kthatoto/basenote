@@ -9,6 +9,13 @@ const initialState = {
 export default function vim(state = initialState, action) {
   let new_cursor;
   switch (action.type) {
+    case 'INIT_CURSOR':
+      return Object.assign({}, state, {
+        cursor: {
+          line: 1,
+          column: 1,
+        },
+      })
     case 'INSERT_MODE':
       return Object.assign({}, state, {
         mode: 'insert',

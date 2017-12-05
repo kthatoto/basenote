@@ -18,6 +18,21 @@
   &__content {
     height: calc( 100% - #{$labelHeight} );
   }
+  &__statusLine {
+    $statusLineHeight: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $statusLineHeight;
+    background-color: $bgBlack;
+    vertical-align: middle;
+    padding: 0 10px;
+    .-mode {
+      color: #e8ad3e;
+      vertical-align: middle;
+      line-height: $statusLineHeight;
+    }
+  }
 }
 
 @import './daily/line';

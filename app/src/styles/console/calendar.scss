@@ -1,0 +1,30 @@
+
+.calendar {
+  height: 400px;
+  padding: 10px;
+  color: $white;
+  text-align: center;
+  vertical-align: middle;
+  &__month {
+    font-size: 24px;
+  }
+  &__days, &__week {
+    height: 40px;
+    div {
+      vertical-align: middle;
+      display: inline-block;
+      width: calc(100% / 7);
+      height: 100%;
+      span {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        border: 2px solid red;
+        border-radius: 50%;
+      }
+    }
+  }
+  &__days {
+    margin-top: 20px;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { initCursor } from '../../../actions/vimActionCreator';
 import Line from './Daily/Line';
 
 class Daily extends Component {
@@ -9,6 +10,7 @@ class Daily extends Component {
     this.addTabInvalidation();
     this.addEventInNormalMode();
     this.addFocusInvalidation();
+    this.props.dispatch(initCursor());
   }
   componentWillUnmount() {
     this.removeTabInvalidation();
@@ -16,16 +18,16 @@ class Daily extends Component {
     this.removeFocusInvalidation();
   }
   addFocusInvalidation() {
-    const interface = document.querySelector(".interface__input");
+    const interfaceInput = document.querySelector(".interface__input");
     const blurInterface = () => {
-      interface__input.blur();
+      interfaceInput.blur();
     };
-    interface.addEventListener('focus', blurInterface);
+    interfaceInput.addEventListener('focus', blurInterface);
     this.setState({ blurInterface });
   }
   removeFocusInvalidation() {
-    const interface = document.querySelector(".interface__input");
-    interface.removeEventListener('focus', this.state.blurInterface);
+    const interfaceInput = document.querySelector(".interface__input");
+    interfaceInput.removeEventListener('focus', this.state.blurInterface);
   }
   addTabInvalidation() {
     document.onkeydown = e => {
@@ -110,6 +112,10 @@ class Daily extends Component {
     }
   }
   render() {
+    let vimStatus;
+    if (this.props.Vim.mode == 'insert') {
+      vimStatus = <span className="-mode">-- insert --</span>;
+    }
     return (
       <div className="daily">
         <div className="daily__dateLabel">
@@ -119,6 +125,9 @@ class Daily extends Component {
           {this.props.Dailies.daily.content.map((lineContent, line) => {
             return <Line line={line + 1} string={lineContent.string} key={line} />
           })}
+        </div>
+        <div className="daily__statusLine">
+          {vimStatus}
         </div>
       </div>
     );
