@@ -1,5 +1,6 @@
 
 .console {
+  border-left: 1px solid $innerBorderColor;
 }
 @import './calendar';
 @import './terminal';
