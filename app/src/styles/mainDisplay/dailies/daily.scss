@@ -27,6 +27,8 @@
     background-color: $bgBlack;
     vertical-align: middle;
     padding: 0 10px;
+    color: $white;
+    line-height: $statusLineHeight;
     .-mode {
       color: #e8ad3e;
       vertical-align: middle;

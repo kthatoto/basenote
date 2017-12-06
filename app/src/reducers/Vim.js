@@ -4,6 +4,7 @@ const initialState = {
     line: 1,
     column: 1,
   },
+  statusLine: '',
   mode: 'normal',
 };
 export default function vim(state = initialState, action) {
@@ -15,7 +16,18 @@ export default function vim(state = initialState, action) {
           line: 1,
           column: 1,
         },
-      })
+        statusLine: '',
+        mode: 'normal',
+      });
+    case 'ADD_CHAR_TO_COMMAND_LINE':
+      return Object.assign({}, state, {
+        statusLine: state.statusLine + action.char,
+      });
+    case 'COMMAND_MODE':
+      return Object.assign({}, state, {
+        statusLine: ':',
+        mode: 'command',
+      });
     case 'INSERT_MODE':
       return Object.assign({}, state, {
         mode: 'insert',
@@ -23,7 +35,7 @@ export default function vim(state = initialState, action) {
     case 'NORMAL_MODE':
       return Object.assign({}, state, {
         mode: 'normal',
-      })
+      });
     case 'H_MOVE':
       new_cursor = {
         line: state.cursor.line,

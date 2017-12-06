@@ -50,6 +50,30 @@ class Daily extends Component {
   removeTabInvalidation() {
     document.onkeydown = null;
   }
+  addEventInCommandMode() {
+    const listener = e => {
+      if (this.props.Vim.mode == 'command') {
+        const dispatch_type = this.detectDispatchTypeInCommandMode(e.keyCode);
+        this.props.dispatch(dispatch_type);
+        if (dispatch_type.category == 'submit') {
+          document.removeEventListener('keydown', listener);
+          this.props.dispatch({
+            type: 'SAVE_DIRECTORY',
+            directory: '/Dailies',
+          });
+        }
+      }
+    }
+    document.addEventListener('keydown', listener);
+  }
+  detectDispatchTypeInCommandMode(keyCode) {
+    switch(keyCode) {
+      case 13:
+        return {type: 'COMMAND_ENTER', category: 'submit'};
+      default:
+        return {type: 'ADD_CHAR_TO_COMMAND_LINE', category: 'command', char: String.fromCharCode(keyCode)};
+    }
+  }
   addEventInNormalMode() {
     const listener = e => {
       if (this.props.Vim.mode == 'normal') {
@@ -66,6 +90,8 @@ class Daily extends Component {
           document.removeEventListener('keydown', listener);
           if (this.props.Vim.mode == 'insert') {
             this.addEventInInsertMode();
+          } else if (this.props.Vim.mode == 'command') {
+            this.addEventInCommandMode();
           }
         }
       }
@@ -85,6 +111,8 @@ class Daily extends Component {
         return {type: 'L_MOVE', category: 'move'};
       case 73:
         return {type: 'INSERT_MODE', category: 'mode'};
+      case 186:
+        return {type: 'COMMAND_MODE', category: 'mode'};
       default:
         return {type: '', category: ''};
     }
@@ -140,7 +168,7 @@ class Daily extends Component {
           })}
         </div>
         <div className="daily__statusLine">
-          {vimStatus}
+          {vimStatus || this.props.Vim.statusLine}
         </div>
       </div>
     );

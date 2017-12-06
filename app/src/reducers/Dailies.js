@@ -9,7 +9,13 @@ const initialState = {
     {
       label: "2017-12-5",
       content: [
-        { string: "test strings" }
+        { string: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm" },
+        { string: "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim " },
+        { string: "iam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea " },
+        { string: "modo consequat. Duis aute irure dolor in reprehenderit in voluptate v" },
+        { string: "t esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaeca" },
+        { string: "upi datat non proident, sunt in culpa qui officia deserunt mollit ani" },
+        { string: "d est laborum." },
       ],
     }
   ],
