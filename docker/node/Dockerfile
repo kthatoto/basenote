@@ -10,6 +10,7 @@ RUN npm install --save react react-dom axios
 RUN npm install --save redux react-redux
 RUN npm install --save-dev babel-loader babel-core babel-preset-es2015 babel-preset-react
 RUN npm install --save-dev style-loader css-loader sass-loader node-sass
+RUN npm install --save-dev file-loader url-loader
 
 RUN npm install --save-dev redux-thunk
 

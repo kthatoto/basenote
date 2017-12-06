@@ -2,23 +2,17 @@
 const initialState = {
   output: '',
   currentDirectory: '/',
-  //currentDirectory: '/Dailies/2017-12-5',
   resources: [
-    {
-      name: "Dailies",
-      type: "directory",
-      resources: [],
-    },
-    {
-      name: "Projects",
-      type: "directory",
-      resources: [],
-    },
-    {
-      name: "Tasks",
-      type: "directory",
-      resources: [],
-    },
+    { name: "Dailies", type: "directory", resources: [], },
+    { name: "Projects", type: "directory", resources: [], },
+    { name: "Tasks", type: "directory", resources: [], },
+    { name: "Books", type: "directory", resources: [], },
+    { name: "Pictures", type: "directory", resources: [], },
+    { name: "Notes", type: "directory", resources: [], },
+    { name: "Ideas", type: "directory", resources: [], },
+    { name: "Pages", type: "directory", resources: [], },
+    { name: "Scraps", type: "directory", resources: [], },
+    { name: "Snippets", type: "directory", resources: [], },
   ],
 };
 export default function terminal(state = initialState, action) {
