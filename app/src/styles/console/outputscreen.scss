@@ -5,10 +5,15 @@
   width: 100%;
   padding: 10px 10px 0;
   position: relative;
-  &__currentDirectory {
+  &__prompt {
     position: absolute;
     bottom: -20px;
-    color: #ac95b7;
     font-weight: bolder;
+  }
+  &__prime {
+    color: #dcbd7e;
+  }
+  &__currentDirectory {
+    color: #ac95b7;
   }
 }

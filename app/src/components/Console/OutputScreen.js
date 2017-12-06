@@ -6,8 +6,9 @@ class OutputScreen extends Component {
     return (
       <div className="outputScreen">
         {this.props.Terminal.output}
-        <div className="outputScreen__currentDirectory">
-          {this.props.Terminal.currentDirectory}
+        <div className="outputScreen__prompt">
+          <span className="outputScreen__prime">{this.props.Terminal.prime}</span>
+          <span className="outputScreen__currentDirectory">:{this.props.Terminal.currentDirectory}</span>
         </div>
       </div>
     );

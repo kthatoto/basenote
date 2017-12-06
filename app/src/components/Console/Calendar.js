@@ -3,68 +3,56 @@ import { connect } from 'react-redux';
 
 class Calendar extends Component {
   render() {
+    const year  = this.props.Terminal.calendar.year;
+    const month = this.props.Terminal.calendar.month;
+    const months = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    const offset = new Date(year, month - 1, 1).getDay();
+    let date = 1;
+    let firstDateDisplayed = false;
+    const lastDate = new Date(year, month, 0).getDate();
+    let weeks = [];
+    let week = [];
+    for(let i = 1; i <= lastDate; i++) {
+      if (i == 1) {
+        for (let j = 0; j < offset; j++) {
+          week.push("");
+        }
+      }
+      week.push(i);
+      if (week.length == 7) {
+        weeks.push(week);
+        week = [];
+      }
+      if (i == lastDate && week.length > 0) {
+        let weeklength = week.length;
+        for(let k = 0; k < 7 - weeklength; k++) {
+          week.push("");
+        }
+        weeks.push(week);
+      }
+    }
+    console.log(this.props.Terminal);
+
     return (
       <div className="calendar">
-        <div className="calendar__month">December 2017</div>
+        <div className="calendar__month">{months[month - 1]} {year}</div>
         <div className="">
           <div className="calendar__days">
             <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
             <div>Thu</div><div>Fri</div><div>Sat</div>
           </div>
-          <div className="calendar__week">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div>1</div>
-            <div>2</div>
-          </div>
-          <div className="calendar__week">
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div><span>6</span></div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-          </div>
-          <div className="calendar__week">
-            <div>10</div>
-            <div>11</div>
-            <div>12</div>
-            <div>13</div>
-            <div>14</div>
-            <div>15</div>
-            <div>16</div>
-          </div>
-          <div className="calendar__week">
-            <div>17</div>
-            <div>18</div>
-            <div>19</div>
-            <div>20</div>
-            <div>21</div>
-            <div>22</div>
-            <div>23</div>
-          </div>
-          <div className="calendar__week">
-            <div>24</div>
-            <div>25</div>
-            <div>26</div>
-            <div>27</div>
-            <div>28</div>
-            <div>29</div>
-            <div>30</div>
-          </div>
-          <div className="calendar__week">
-            <div>31</div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          {weeks.map(week => {
+            return <div className="calendar__week">
+              {week.map(date => {
+                if (year == this.props.Terminal.today.year && month == this.props.Terminal.today.month && date == this.props.Terminal.today.date) {
+                  return <div><span>{date}</span></div>;
+                } else {
+                  return <div>{date}</div>;
+                }
+              })}
+            </div>
+          })}
         </div>
       </div>
     );

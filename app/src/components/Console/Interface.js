@@ -16,6 +16,7 @@ class Interface extends Component {
   }
   command(e) {
     if (e.keyCode == 13) {
+      this.props.dispatch({type: 'RANDOM_PRIME'});
       const line = this.refs.line;
       const command = line.value;
       line.value = '';
@@ -64,7 +65,7 @@ class Interface extends Component {
 function mapStateToProps(state) {
   return state;
 }
-function mapDispatchToProps(dispath) {
+function mapDispatchToProps(dispatch) {
   return { dispatch };
 }
 

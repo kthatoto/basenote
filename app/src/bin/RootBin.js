@@ -4,6 +4,7 @@ import cd from './cd';
 import pwd from './pwd';
 import mkdir from './mkdir';
 import vi from './vi';
+import cal from './cal';
 
 export default class RootBin {
   static processCommand(rawCommand, state, dispatch) {
@@ -24,6 +25,9 @@ export default class RootBin {
         return;
       case 'vi':
         vi(command, state, dispatch);
+        return;
+      case 'cal':
+        cal(command, state, dispatch);
         return;
       default:
         dispatch({
