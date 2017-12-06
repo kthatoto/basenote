@@ -1,0 +1,35 @@
+
+.taskItem {
+  &__project {
+    width: 90%;
+    text-align: left;
+    background-color: $blue;
+    color: $white;
+    margin: 20px auto;
+    border-radius: 3px;
+    padding: 10px;
+    &Name {
+      font-size: 24px;
+      background-color: $lightblue;
+      color: $black;
+      padding: 10px;
+      border-radius: 3px;
+    }
+  }
+  &__task {
+    margin: 10px;
+  }
+  &__check {
+    display: inline-block;
+    margin: 3px;
+    height: 20px;
+    width: 20px;
+    border: 3px solid $gray;
+    border-radius: 50%;
+    background-color: $white;
+    vertical-align: middle;
+    &.-completed {
+      background-color: $black;
+    }
+  }
+}

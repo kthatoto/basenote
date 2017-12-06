@@ -17,7 +17,7 @@ const initialState = {
       urgentTaskCount: 3,
     },
     {
-      title: "This projects",
+      title: "This project",
       taskCount: 512,
       urgentTaskCount: 1,
     },
@@ -25,9 +25,6 @@ const initialState = {
 };
 export default function terminal(state = initialState, action) {
   switch (action.type) {
-    case 'none':
-      return Object.assign({}, state, {
-      });
     default:
       return state;
   }
