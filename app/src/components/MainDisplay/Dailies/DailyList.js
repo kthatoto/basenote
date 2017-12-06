@@ -7,7 +7,7 @@ import DailyItem from './DailyItem';
 
 class DailyList extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchDailies());
+    //this.props.dispatch(fetchDailies());
     document.activeElement.blur();
     this.addEventToShiftFocus();
   }
@@ -24,7 +24,10 @@ class DailyList extends Component {
       }
       if (e.keyCode == 13) {
         const focusedDaily = this.props.Dailies.dailies.find(daily => daily.focused);
-        this.props.dispatch(changeDirectory(focusedDaily.year + '-' + focusedDaily.month + '-' + focusedDaily.date));
+        const year  = focusedDaily.label.split('-')[0];
+        const month = focusedDaily.label.split('-')[1];
+        const date  = focusedDaily.label.split('-')[2];
+        this.props.dispatch(changeDirectory(year + '-' + month + '-' + date));
         this.removeEventToShiftFocus();
       }
     };
@@ -38,7 +41,7 @@ class DailyList extends Component {
     return (
       <div className="dailyList">
         {this.props.Dailies.dailies.map(daily => {
-          return <DailyItem daily={daily} key={daily.id} />
+          return <DailyItem daily={daily} key={daily.label} />
         })}
       </div>
     );

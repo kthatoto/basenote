@@ -5,8 +5,21 @@ import { initCursor } from '../../../actions/vimActionCreator';
 import Line from './Daily/Line';
 
 class Daily extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayingDaily: {
+        label: '',
+        content: [],
+      },
+    };
+  }
   componentDidMount() {
     document.activeElement.blur();
+    const displayingDailyLabel = this.props.Terminal.currentDirectory.split('/')[2];
+    const displayingDaily = this.props.Dailies.dailies.find(value => value.label == displayingDailyLabel);
+    this.setState({ displayingDaily });
+
     this.addTabInvalidation();
     this.addEventInNormalMode();
     this.addFocusInvalidation();
@@ -44,7 +57,7 @@ class Daily extends Component {
         if (dispatch_type.category == 'move') {
           this.props.dispatch({
             type: dispatch_type.type,
-            content: this.props.Dailies.daily.content,
+            content: this.state.displayingDaily.content,
           });
         } else if (dispatch_type.category == 'mode') {
           this.props.dispatch({
@@ -86,7 +99,7 @@ class Daily extends Component {
         if (dispatch_type.category == 'insert') {
           this.props.dispatch({
             type: dispatch_type.type,
-            content: this.props.Dailies.daily.content,
+            content: this.state.displayingDaily.content,
           });
         } else if (dispatch_type.category == 'mode') {
           this.props.dispatch({
@@ -119,10 +132,10 @@ class Daily extends Component {
     return (
       <div className="daily">
         <div className="daily__dateLabel">
-          <span>{this.props.date}</span>
+          <span>{this.state.displayingDaily.label}</span>
         </div>
         <div className="daily__content">
-          {this.props.Dailies.daily.content.map((lineContent, line) => {
+          {this.state.displayingDaily.content.map((lineContent, line) => {
             return <Line line={line + 1} string={lineContent.string} key={line} />
           })}
         </div>

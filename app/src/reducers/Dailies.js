@@ -1,12 +1,18 @@
 
 const initialState = {
-  dailies: [],
-  daily: {
-    content: [
-      { string: "test props" },
-      { string: "params mars" },
-    ],
-  },
+  dailies: [
+    {
+      label: "2017-12-6",
+      content: [{ string: " " }],
+      focused: true,
+    },
+    {
+      label: "2017-12-5",
+      content: [
+        { string: "test strings" }
+      ],
+    }
+  ],
 };
 export default function dailies(state = initialState, action) {
   switch (action.type) {

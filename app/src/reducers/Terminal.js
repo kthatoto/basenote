@@ -23,6 +23,10 @@ const initialState = {
 };
 export default function terminal(state = initialState, action) {
   switch (action.type) {
+    case 'SAVE_DIRECTORY':
+      return Object.assign({}, state, {
+        currentDirectory: action.directory,
+      });
     case 'OUTPUT_MESSAGE':
       return Object.assign({}, state, {
         output: action.message,
