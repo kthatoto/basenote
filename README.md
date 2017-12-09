@@ -21,4 +21,4 @@ $ docker-compose run --rm rails rake db:create
 - `$ dcoker-compose build`
 
 ## TODO
-- 日本語等フォント
+- 日本語等幅フォント
