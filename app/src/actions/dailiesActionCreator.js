@@ -12,12 +12,12 @@ export function fetchDailies() {
           month: daily.month,
           date: daily.date,
           focused: false,
-        }
+        };
       });
       dailies[0].focused = true;
       dispatch({
         type: 'SET_DAILIES',
-        dailies
+        dailies,
       });
     });
   }
