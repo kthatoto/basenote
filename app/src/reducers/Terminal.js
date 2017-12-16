@@ -1,7 +1,7 @@
 
 const initialState = {
   output: '',
-  prime: 101,
+  prime: 0,
   currentDirectory: '/',
   resources: [
     { name: "Dailies", type: "directory", resources: [], },
