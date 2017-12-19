@@ -12,13 +12,17 @@ $ docker-compose up
 $ docker-compose run --rm rails rake db:create
 ```
 
-## gemを追加したい時
-- ./docker/rails/Gemfileにgem追加
-- `$ dcoker-compose build`
+## Add gem
+```
+#./docker/rails/Gemfileにgem追加
+$ dcoker-compose build
+```
 
-## Node moduleを追加したい時
-- ./docker/node/Dockerにモジュール追加
-- `$ dcoker-compose build`
+## Add node module
+```
+#./docker/node/Dockerにモジュール追加
+$ dcoker-compose build
+```
 
 ## TODO
 - 日本語等幅フォント
