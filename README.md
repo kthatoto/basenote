@@ -23,6 +23,3 @@ $ dcoker-compose build
 #./docker/node/Dockerにモジュール追加
 $ dcoker-compose build
 ```
-
-## TODO
-- 日本語等幅フォント
